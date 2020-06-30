@@ -5,7 +5,7 @@
 
 | 构建状态                                                     | NuGet版本                                                    |
 | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| ![](https://img.shields.io/jenkins/tests?compact_message&failed_label=%E5%A4%B1%E8%B4%A5&jobUrl=http%3A%2F%2Fjenkins.hlmiku.cn%2Fjob%2FMeteorTools&label=MeteorTools&passed_label=%E6%88%90%E5%8A%9F&skipped_label=%E8%B7%B3%E8%BF%87) | [![](https://img.shields.io/nuget/v/MeteorTools.svg)](https://www.nuget.org/packages/MeteorTools) |
+| ![](https://img.shields.io/jenkins/build?jobUrl=http%3A%2F%2Fjenkins.hlmiku.cn%2Fjob%2FMeteorTools) | [![](https://img.shields.io/nuget/v/MeteorTools.svg)](https://www.nuget.org/packages/MeteorTools) |
 
 
 
