@@ -8,7 +8,7 @@ using System.Net;
 namespace MeteorTools
 {
     /// <summary>
-    /// 有关腾讯接口
+    /// 有关腾讯的接口
     /// </summary>
     public class Tencent
     {
