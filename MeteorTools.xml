@@ -1,0 +1,54 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>MeteorTools</name>
+    </assembly>
+    <members>
+        <member name="T:MeteorTools.String">
+            <summary>
+            关于字符串操作类
+            </summary>
+        </member>
+        <member name="M:MeteorTools.String.InterceptionString(System.String,System.String,System.String)">
+            <summary>
+            通过前后字符串截取中间
+            </summary>
+            <param name="Original">源字符串</param>
+            <param name="Before">截取前字符</param>
+            <param name="After">截取后字符</param>
+            <returns>截取完毕字符串</returns>
+        </member>
+        <member name="T:MeteorTools.Tencent">
+            <summary>
+            有关腾讯接口
+            </summary>
+        </member>
+        <member name="M:MeteorTools.Tencent.GetUinImage(System.String,System.Int32)">
+            <summary>
+            使用QQ号获取QQ头像
+            </summary>
+            <param name="QQUin">QQ号</param>
+            <param name="ServerNum">请求服务器，传入2则使用QQ空间，传入1或不传入则使用QQ</param>
+            <returns>返回Bitmap图片</returns>
+        </member>
+        <member name="M:MeteorTools.Tencent.GetGroupImage(System.String)">
+            <summary>
+            使用群号获取群头像
+            </summary>
+            <param name="QQGroup">群号</param>
+            <returns>返回Bitmap图片</returns>
+        </member>
+        <member name="M:MeteorTools.Tencent.GetVisitors(System.String,System.String,System.String,System.String,System.String,System.String)">
+            <summary>
+            获取QQ空间访客数量
+            </summary>
+            <param name="QQUin">QQ号</param>
+            <param name="g_tk">该QQ号对应的令牌</param>
+            <param name="p_uin">该QQ号对应的令牌</param>
+            <param name="skey">该QQ号对应的令牌</param>
+            <param name="pt4_token">该QQ号对应的令牌</param>
+            <param name="p_skey">该QQ号对应的令牌</param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

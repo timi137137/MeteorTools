@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>$id$</id>
+    <version>$version$-alpha</version>
+    <title>$title$</title>
+    <authors>悠静萝莉</authors>
+    <owners>$author$</owners>
+    <license type="expression">MIT</license>
+    <projectUrl>https://github.com/timi137137/MeteorTools</projectUrl>
+    <requireLicenseAcceptance>true</requireLicenseAcceptance>
+    <description>$description$</description>
+    <releaseNotes>从零开始，添加了3个腾讯类相关接口。支持较多版本</releaseNotes>
+    <copyright>悠静萝莉 Copyright 2019-2020</copyright>
+    <tags>Tools Meteor hlmiku</tags>
+  </metadata>
+</package>
