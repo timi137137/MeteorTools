@@ -20,8 +20,15 @@
         </member>
         <member name="T:MeteorTools.Tencent">
             <summary>
-            有关腾讯接口
+            有关腾讯的接口
             </summary>
+        </member>
+        <member name="M:MeteorTools.Tencent.GetGToken(System.String)">
+            <summary>
+            通过SKEY获取G_Tk
+            </summary>
+            <param name="skey">skey</param>
+            <returns>方法字符串的g_tk</returns>
         </member>
         <member name="M:MeteorTools.Tencent.GetUinImage(System.String,System.Int32)">
             <summary>
@@ -49,6 +56,30 @@
             <param name="pt4_token">该QQ号对应的令牌</param>
             <param name="p_skey">该QQ号对应的令牌</param>
             <returns></returns>
+        </member>
+        <member name="M:MeteorTools.Tencent.GetVisitorsInfo(System.String,System.String,System.String,System.String,System.String,System.String)">
+            <summary>
+            获取详细的访客信息，以JArray返回
+            </summary>
+            <param name="QQUin">QQ号</param>
+            <param name="g_tk">该QQ号对应的令牌</param>
+            <param name="p_uin">该QQ号对应的令牌</param>
+            <param name="skey">该QQ号对应的令牌</param>
+            <param name="pt4_token">该QQ号对应的令牌</param>
+            <param name="p_skey">该QQ号对应的令牌</param>
+            <returns>返回一个JArray类型</returns>
+        </member>
+        <member name="T:MeteorTools.Time">
+            <summary>
+            时间相关类
+            </summary>
+        </member>
+        <member name="M:MeteorTools.Time.ConvertStringToDateTime(System.String)">
+            <summary>    
+            时间戳转为DateTime格式时间    
+            </summary>    
+            <param name="timeStamp">时间戳</param>    
+            <returns>DateTime格式</returns>    
         </member>
     </members>
 </doc>

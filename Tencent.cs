@@ -13,6 +13,21 @@ namespace MeteorTools
     public class Tencent
     {
         /// <summary>
+        /// 通过SKEY获取G_Tk
+        /// </summary>
+        /// <param name="skey">skey</param>
+        /// <returns>方法字符串的g_tk</returns>
+        public static string GetGToken(string skey) 
+        {
+            int hash = 5381;
+            for (int i = 0, len = skey.Length; i < len; ++i)
+            {
+                hash += (hash << 5) + System.Text.Encoding.Unicode.GetBytes(skey[i].ToString())[0];
+            }
+            return (hash & 0x7fffffff).ToString();
+        }
+
+        /// <summary>
         /// 使用QQ号获取QQ头像
         /// </summary>
         /// <param name="QQUin">QQ号</param>
@@ -79,6 +94,37 @@ namespace MeteorTools
             Json.Add("BlockCount", JObject.Parse(DataJson[2].ToString())["totalcount"].ToString());
             Json.Add("BlockTodayCount", JObject.Parse(DataJson[2].ToString())["todaycount"].ToString());
             return Json;
+        }
+
+        /// <summary>
+        /// 获取详细的访客信息，以JArray返回
+        /// </summary>
+        /// <param name="QQUin">QQ号</param>
+        /// <param name="g_tk">该QQ号对应的令牌</param>
+        /// <param name="p_uin">该QQ号对应的令牌</param>
+        /// <param name="skey">该QQ号对应的令牌</param>
+        /// <param name="pt4_token">该QQ号对应的令牌</param>
+        /// <param name="p_skey">该QQ号对应的令牌</param>
+        /// <returns>返回一个JArray类型</returns>
+        public static JArray GetVisitorsInfo(string QQUin, string g_tk, string p_uin, string skey, string pt4_token, string p_skey) 
+        {
+            HttpWebRequest request = (HttpWebRequest)HttpWebRequest.Create("https://user.qzone.qq.com/proxy/domain/r.qzone.qq.com/cgi-bin/right_frame.cgi?uin=" + QQUin + "&param=3_" + QQUin + "_0%7C14_" + QQUin + "%7C8_8_" + QQUin + "_1_1_0_0_1%7C10%7C11%7C12%7C13_0%7C17%7C20%7C9_0_8_1%7C18&g_tk=" + g_tk);
+            request.Accept = "*/*";
+            request.Referer = "https://user.qzone.qq.com/" + QQUin + "/infocenter";
+            request.Method = "GET";
+            request.Headers.Add("authority", "user.qzone.qq.com");
+            request.Headers.Add("method", "GET");
+            request.Headers.Add("path", "/proxy/domain/r.qzone.qq.com/cgi-bin/right_frame.cgi?uin=" + QQUin + "&param=3_" + QQUin + "_0%7C14_" + QQUin + "%7C8_8_" + QQUin + "_1_1_0_0_1%7C10%7C11%7C12%7C13_0%7C17%7C20%7C9_0_8_1%7C18&g_tk=" + g_tk);
+            request.Headers.Add("scheme", "https");
+            request.Headers.Add("Cookie", "p_uin=" + p_uin + ";skey=" + skey + "; pt4_token=" + pt4_token + "; p_skey=" + p_skey + ";");
+            HttpWebResponse resp = (HttpWebResponse)request.GetResponse();
+            if (resp.StatusCode == HttpStatusCode.InternalServerError) 
+            {
+                return null; 
+            }
+            StreamReader reader = new StreamReader(resp.GetResponseStream());
+            JObject ResponseJson = JObject.Parse(String.InterceptionString(reader.ReadToEnd(), @"(", @")").Replace("\'", "\""));
+            return (JArray)JArray.Parse(JObject.Parse(JObject.Parse(JObject.Parse(ResponseJson["data"].ToString())["module_3"].ToString())["data"].ToString())["items"].ToString());
         }
     }
 }
