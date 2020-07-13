@@ -1,4 +1,4 @@
-<?xml version="1.0"?>
+<?xml version="1.0" encoding="utf-8"?>
 <package >
   <metadata>
     <id>$id$</id>
@@ -8,10 +8,14 @@
     <owners>$author$</owners>
     <license type="expression">MIT</license>
     <projectUrl>https://github.com/timi137137/MeteorTools</projectUrl>
+	<icon>images\MeteorToolsicon.png</icon>
     <requireLicenseAcceptance>true</requireLicenseAcceptance>
     <description>$description$</description>
     <releaseNotes>改善算法，添加了时间类,字符串类。添加了读取访客详细信息接口</releaseNotes>
     <copyright>悠静萝莉 Copyright 2019-2020</copyright>
     <tags>Tools Meteor hlmiku</tags>
   </metadata>
+  <files>
+    <file src=".\MeteorToolsicon.png" target="images\" />
+  </files>
 </package>

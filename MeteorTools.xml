@@ -69,6 +69,30 @@
             <param name="p_skey">该QQ号对应的令牌</param>
             <returns>返回一个JArray类型</returns>
         </member>
+        <member name="M:MeteorTools.Tencent.GetSpecialCareCount(System.String,System.String,System.String,System.String,System.String,System.String)">
+            <summary>
+            获取特别关心信息-无法获取特关自己的详细信息
+            </summary>
+            <param name="QQUin">QQ号</param>
+            <param name="g_tk">该QQ号对应的令牌</param>
+            <param name="p_uin">该QQ号对应的令牌</param>
+            <param name="skey">该QQ号对应的令牌</param>
+            <param name="pt4_token">该QQ号对应的令牌</param>
+            <param name="p_skey">该QQ号对应的令牌</param>
+            <returns></returns>
+        </member>
+        <member name="M:MeteorTools.Tencent.GetSpecialCareInfo(System.String,System.String,System.String,System.String,System.String,System.String)">
+            <summary>
+            获取传入用户特别关心的详细信息
+            </summary>
+            <param name="QQUin">QQ号</param>
+            <param name="g_tk">该QQ号对应的令牌</param>
+            <param name="p_uin">该QQ号对应的令牌</param>
+            <param name="skey">该QQ号对应的令牌</param>
+            <param name="pt4_token">该QQ号对应的令牌</param>
+            <param name="p_skey">该QQ号对应的令牌</param>
+            <returns></returns>
+        </member>
         <member name="T:MeteorTools.Time">
             <summary>
             时间相关类

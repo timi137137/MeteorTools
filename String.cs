@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace MeteorTools
+﻿namespace MeteorTools
 {
     /// <summary>
     /// 关于字符串操作类
@@ -16,10 +12,10 @@ namespace MeteorTools
         /// <param name="Before">截取前字符</param>
         /// <param name="After">截取后字符</param>
         /// <returns>截取完毕字符串</returns>
-        public static string InterceptionString(string Original,string Before,string After) 
+        public static string InterceptionString(string Original, string Before, string After)
         {
             Original = Original.Remove(Original.LastIndexOf(After));
-            int i = Original.IndexOf(Before)+1;
+            int i = Original.IndexOf(Before) + 1;
             return Original.Substring(i, Original.Length - i);
         }
     }
